@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Pull Source Code') {
             steps {
-                git 'https://github.com/Shantanu20000/CSS_Host_Site_With_Jenkins_Pipline.git'
+                git 'https://github.com/arch123d/CSS_Host_Site_With_Jenkins_Pipline.git'
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: AWS_CREDENTIALS]]) {
                     script {
                         sh """
-                    aws eks update-kubeconfig --name my-cluster --region ap-south-1 --kubeconfig /tmp/config
+                    aws eks update-kubeconfig --name my-cluster --region eu-north-1 --kubeconfig /tmp/config
                     kubectl apply -f k8s_onepod.yaml --kubeconfig=/tmp/config 
                     kubectl set image deployment/css-deployment-free css=${DOCKERHUB_REPO}:${env.BUILD_NUMBER} --kubeconfig=/tmp/config 
                     """

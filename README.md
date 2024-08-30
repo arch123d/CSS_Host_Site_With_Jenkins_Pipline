@@ -69,7 +69,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ##### 4.Stage-view
 ##### 5.Aws-Credential
 ### Add Credentials
-##### 1.Docker-creds(USERNAME & TOKEN/PASSWORD)
+##### 1.Dockerhub-creds(USERNAME & TOKEN/PASSWORD)
 ##### 2.AWS-creds(ACCESS_KEY & SECRETE_KEY)
 
 ## Use jenkins_Instance Terminal
